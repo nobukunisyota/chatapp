@@ -1,0 +1,9 @@
+CREATE TABLE message (
+    id SERIAL PRIMARY KEY,
+    message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    is_favorite BOOLEAN DEFAULT FALSE,
+    CONSTRAINT fk_users_id FOREIGN KEY (id) REFERENCES Users(id),
+    CONSTRAINT fk_chatroom_id FOREIGN KEY (id) REFERENCES chatroom(id)
+);
