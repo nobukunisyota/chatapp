@@ -1,7 +1,7 @@
 package main
 
 import (
-	"src/controller"
+	"chatapp/controller"
 
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
@@ -18,10 +18,10 @@ func getRouter() *echo.Echo {
 
 	//routing
 	api.GET("/", controller.Index)
-	e.GET("/users/:id", controller.GetUser)
-	e.POST("/users", saveUser)
-	e.PUT("/users/:id", updateUser)
-	e.DELETE("/users/:id", deleteUser)
+	e.GET("/message/:id", controller.GetChatMessage)
+	e.POST("/message/:id", controller.PostChatMessage)
+	e.PUT("/message/:id", controller.PutChatMessage)
+	e.DELETE("/message/:id", controller.DeleteChatMessage)
 
 	return e
 }
