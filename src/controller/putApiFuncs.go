@@ -7,5 +7,6 @@ import (
 )
 
 func PutChatMessage(c echo.Context) error {
-	return c.String(http.StatusOK, "put chat message")
+	id := c.Param("id")
+	return c.String(http.StatusOK, id+" is updated")
 }

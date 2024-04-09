@@ -7,5 +7,6 @@ import (
 )
 
 func DeleteChatMessage(c echo.Context) error {
-	return c.String(http.StatusOK, "Delete chat message")
+	id := c.Param("id")
+	return c.String(http.StatusOK, id+" is deleted")
 }

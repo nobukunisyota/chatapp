@@ -11,5 +11,6 @@ func Index(c echo.Context) error {
 }
 
 func GetChatMessage(c echo.Context) error {
-	return c.String(http.StatusOK, "Get chat message")
+	id := c.Param("id")
+	return c.String(http.StatusOK, id+" is requested")
 }
